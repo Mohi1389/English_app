@@ -1,0 +1,115 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             String   @id @default(cuid())
+  fullName       String
+  email          String   @unique
+  passwordHash   String
+  ageRange       String? // '13-17' | '18-24' | '25-34' | '35+'
+  level          String? // 'beginner' | 'elementary' | 'intermediate'
+  learningGoal   String? // 'conversation' | 'vocabulary' | 'school' | 'travel' | 'general'
+  avatarUrl      String?
+  bio            String?
+  xp             Int      @default(0)
+  streakDays     Int      @default(0)
+  lastActiveDate DateTime?
+  settings       Json?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  savedWords     SavedWord[]
+  quizResults    QuizResult[]
+  aiConversations AIConversation[]
+
+  @@map("users")
+}
+
+model Word {
+  id          String   @id @default(cuid())
+  english     String
+  persian     String
+  phonetic    String
+  exampleEn   String
+  exampleFa   String
+  level       String // 'beginner' | 'elementary' | 'intermediate'
+  difficulty  Int      @default(1)
+  related     Json?
+  createdAt   DateTime @default(now())
+
+  savedBy     SavedWord[]
+
+  @@map("words")
+}
+
+model SavedWord {
+  id        String   @id @default(cuid())
+  userId    String
+  wordId    String
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  word Word @relation(fields: [wordId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, wordId])
+  @@map("saved_words")
+}
+
+model Quiz {
+  id        String      @id @default(cuid())
+  title     String
+  type      String // 'vocabulary' | 'grammar' | 'placement' | 'mixed'
+  level     String
+  questions Json
+  createdAt DateTime    @default(now())
+
+  results   QuizResult[]
+
+  @@map("quizzes")
+}
+
+model QuizResult {
+  id        String   @id @default(cuid())
+  userId    String
+  quizId    String?
+  score     Float
+  total     Int
+  strengths Json?
+  weaknesses Json?
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  quiz Quiz? @relation(fields: [quizId], references: [id], onDelete: SetNull)
+
+  @@map("quiz_results")
+}
+
+model AIConversation {
+  id        String   @id @default(cuid())
+  userId    String
+  title     String?
+  messages  Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("ai_conversations")
+}
+
+model CommunityPost {
+  id        String   @id @default(cuid())
+  userId    String
+  room      String   @default("english-lounge")
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("community_posts")
+}
