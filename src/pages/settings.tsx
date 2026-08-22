@@ -5,7 +5,7 @@ import { useUI } from '@/lib/ui-context';
 import { useAuth } from '@/lib/auth-context';
 import { useRouter } from 'next/router';
 import { ACCENT } from '@/styles/tokens';
-import { AGES_RANGES } from '@/lib/validators';
+import { AGE_RANGES } from '@/lib/validators';
 
 export default function SettingsPage() {
   const { lang, dark, theme, toggleLang, toggleDark } = useUI();
@@ -16,7 +16,7 @@ export default function SettingsPage() {
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
   const [dailyGoal, setDailyGoal] = useState(5);
-  const [ageRange, setAgeRange] = useState(user?.ageRange || AGES_RANGES[0]);
+  const [ageRange, setAgeRange] = useState(user?.ageRange || AGE_RANGES[0]);
 
   const text = (fa: string, en: string) => (lang === 'fa' ? fa : en);
 
@@ -48,7 +48,6 @@ export default function SettingsPage() {
           </div>
         </div>
 
-        {/* Appearance */}
         <Section title={text('ظاهر', 'Appearance')} icon={Moon} color={ACCENT.ocean} theme={theme}>
           <Row label={text('حالت تاریک', 'Dark mode')} desc={text('حالت تاریکِ اقیانوسی عمیق', 'Deep ocean dark mode')} theme={theme}>
             <button onClick={toggleDark} className="w-11 h-6 rounded-full relative transition-colors" style={{ backgroundColor: dark ? ACCENT.ocean : theme.border }}>
@@ -63,7 +62,6 @@ export default function SettingsPage() {
           </Row>
         </Section>
 
-        {/* Learning */}
         <Section title={text('یادگیری', 'Learning')} icon={Bell} color={ACCENT.coral} theme={theme}>
           <Row label={text('هدف روزانه لغات', 'Daily word goal')} desc={text('تعداد لغات جدید در هر روز', 'New words per day')} theme={theme}>
             <div className="flex gap-2">
@@ -79,7 +77,7 @@ export default function SettingsPage() {
           <Row label={text('بازه سنی', 'Age range')} desc={text('برای شخصی‌سازی محتوا', 'For content personalization')} theme={theme}>
             <select value={ageRange} onChange={(e) => setAgeRange(e.target.value)}
               className="px-3 py-1.5 text-xs rounded-full border focus:outline-none" style={{ backgroundColor: theme.card, borderColor: theme.border, color: theme.text }}>
-              {AGES_RANGES.map((a) => <option key={a} value={a}>{a}</option>)}
+              {AGE_RANGES.map((a) => <option key={a} value={a}>{a}</option>)}
             </select>
           </Row>
           <Row label={text('اعلان‌ها', 'Notifications')} desc={text('یادآوری یادگیری روزانه', 'Daily learning reminders')} theme={theme}>
@@ -98,7 +96,6 @@ export default function SettingsPage() {
           )}
         </Section>
 
-        {/* Security */}
         <Section title={text('امنیت', 'Security')} icon={Shield} color={ACCENT.green} theme={theme}>
           <button onClick={() => router.push('/recover')} className="w-full flex items-center gap-2.5 px-4 py-3 rounded-xl border text-sm font-medium transition-all hover:shadow-sm" style={{ backgroundColor: theme.rowHover, borderColor: theme.border, color: theme.sub }}>
             <Shield size={15} style={{ color: ACCENT.green }} />{text('بازیابی رمز عبور', 'Recover password')}
