@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { prisma } from '@/lib/prisma';
+import { fromJson } from '@/lib/json';
 
 /**
  * Dictionary search.
@@ -18,7 +19,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     where: { english: { equals: q } },
   });
 
-  if (!word) {
+  const parsedWord = word ? { ...word, related: fromJson<string[]>(word.related) ?? [] } : null;
+
+  if (!parsedWord) {
     // Try a prefix / contains match as a fallback
     const fallback = await prisma.word.findMany({
       where: { english: { contains: q } },
@@ -27,8 +30,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (fallback.length === 0) {
       return res.status(404).json({ error: 'کلمه پیدا نشد', word: null });
     }
-    return res.status(200).json({ word: fallback[0] });
+    const first = { ...fallback[0], related: fromJson<string[]>(fallback[0].related) ?? [] };
+    return res.status(200).json({ word: first });
   }
 
-  return res.status(200).json({ word });
+  return res.status(200).json({ word: parsedWord });
 }
