@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap');
-
 :root {
   --ocean: #0C8EE6;
   --teal: #22D3EE;
@@ -33,15 +31,27 @@ body {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
+/* فونت وزیرمتن در سراسر سایت — از فایل محلی self-hosted */
+html,
+body,
+body * {
+  font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif !important;
+}
+
 body {
-  font-family: 'Vazirmatn', system-ui, sans-serif;
+  font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+input, textarea, select, button {
+  font-family: 'Vazirmatn', system-ui, sans-serif;
 }
 
 * { box-sizing: border-box; }
 a { color: inherit; text-decoration: none; }
 
+/* ===== انیمیشن‌های مینیمال و سینمایی ===== */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
