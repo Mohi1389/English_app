@@ -8,31 +8,32 @@ datasource db {
 }
 
 model User {
-  id             String   @id @default(cuid())
-  fullName       String
-  email          String   @unique
-  passwordHash   String
-  ageRange       String? // '13-17' | '18-24' | '25-34' | '35+'
-  level          String? // 'beginner' | 'elementary' | 'intermediate'
-  learningGoal   String? // 'conversation' | 'vocabulary' | 'school' | 'travel' | 'general'
-  avatarUrl      String?
-  bio            String?
-  xp             Int      @default(0)
-  streakDays     Int      @default(0)
+  id            String   @id @default(cuid())
+  fullName      String
+  email         String   @unique
+  passwordHash  String
+  ageRange      String? // '13-17' | '18-24' | '25-34' | '35+'
+  level         String? // 'beginner' | 'elementary' | 'intermediate'
+  learningGoal  String? // 'conversation' | 'vocabulary' | 'school' | 'travel' | 'general'
+  avatarUrl     String?
+  bio           String?
+  xp            Int      @default(0)
+  streakDays    Int      @default(0)
   lastActiveDate DateTime?
-  settings       Json?
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+  settings      Json?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 
   savedWords     SavedWord[]
   quizResults    QuizResult[]
   aiConversations AIConversation[]
+  communityPosts CommunityPost[]
 
   @@map("users")
 }
 
 model Word {
-  id          String   @id @default(cuid())
+  id          String   @id
   english     String
   persian     String
   phonetic    String
@@ -84,7 +85,7 @@ model QuizResult {
   weaknesses Json?
   createdAt DateTime @default(now())
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user User  @relation(fields: [userId], references: [id], onDelete: Cascade)
   quiz Quiz? @relation(fields: [quizId], references: [id], onDelete: SetNull)
 
   @@map("quiz_results")
@@ -110,6 +111,8 @@ model CommunityPost {
   content   String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("community_posts")
 }
