@@ -80,7 +80,7 @@ async function main() {
         exampleFa: w.exampleFa,
         level: w.level,
         difficulty: w.difficulty,
-        related: w.related,
+        related: JSON.stringify(w.related),
       },
     });
   }
@@ -93,7 +93,7 @@ async function main() {
           title: q.title,
           type: q.type,
           level: q.level,
-          questions: q.questions as any,
+          questions: JSON.stringify(q.questions),
         },
       });
     }
