@@ -1,1 +1,146 @@
-aW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlIH0gZnJvbSAncmVhY3QnOwppbXBvcnQgeyB1c2VSb3V0ZXIgfSBmcm9tICduZXh0L3JvdXRlcic7CmltcG9ydCB7IFNlYXJjaCwgVm9sdW1lMiwgU3BhcmtsZXMsIEJvdCwgTG9hZGVyMiwgQm9vaywgTGFuZ3VhZ2VzIH0gZnJvbSAnbHVjaWRlLXJlYWN0JzsKaW1wb3J0IExheW91dCBmcm9tICdAL2NvbXBvbmVudHMvTGF5b3V0JzsKaW1wb3J0IHsgdXNlVUkgfSBmcm9tICdAL2xpYi91aS1jb250ZXh0JzsKaW1wb3J0IHsgdXNlQXV0aCB9IGZyb20gJ0AvbGliL2F1dGgtY29udGV4dCc7CmltcG9ydCB7IEFDQ0VOVCB9IGZyb20gJ0Avc3R5bGVzL3Rva2Vucyc7CgppbnRlcmZhY2UgRGljdEhpdCB7CiAgaWQ6IHN0cmluZzsKICBlbmdsaXNoOiBzdHJpbmc7CiAgcGVyc2lhbjogc3RyaW5nOwogIHBob25ldGljOiBzdHJpbmc7CiAgZXhhbXBsZUVuOiBzdHJpbmc7CiAgZXhhbXBsZUZhOiBzdHJpbmc7CiAgcmVsYXRlZDogc3RyaW5nW10gfCBudWxsOwogIGxldmVsOiBzdHJpbmc7CiAgZGlmZmljdWx0eTogbnVtYmVyOwp9Cgpjb25zdCBMRVZFTF9DT0xPUjogUmVjb3JkPHN0cmluZywgc3RyaW5nPiA9IHsKICBiZWdpbm5lcjogQUNDRU5ULmdyZWVuLAogIGVsZW1lbnRhcnk6IEFDQ0VOVC50ZWFsLAogIGludGVybWVkaWF0ZTogQUNDRU5ULmFtYmVyLAp9OwoKZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gRGljdGlvbmFyeVBhZ2UoKSB7CiAgY29uc3QgeyBsYW5nLCB0aGVtZSB9ID0gdXNlVUkoKTsKICBjb25zdCByb3V0ZXIgPSB1c2VSb3V0ZXIoKTsKICBjb25zdCB7IHRva2VuIH0gPSB1c2VBdXRoKCk7CiAgY29uc3QgW3EsIHNldFFdID0gdXNlU3RhdGUoJycpOwogIGNvbnN0IFtoaXQsIHNldEhpdF0gPSB1c2VTdGF0ZTxEaWN0SGl0IHwgbnVsbD4obnVsbCk7CiAgY29uc3QgW2xvYWRpbmcsIHNldExvYWRpbmddID0gdXNlU3RhdGUoZmFsc2UpOwogIGNvbnN0IFt2aWV3ZWQsIHNldFZpZXdlZF0gPSB1c2VTdGF0ZTxudW1iZXI+KDUpOwoKICBjb25zdCB0ZXh0ID0gKGZhOiBzdHJpbmcsIGVuOiBzdHJpbmcpID0+IChsYW5nID09PSAnZmEnID8gZmEgOiBlbik7CgogIGFzeW5jIGZ1bmN0aW9uIHNlYXJjaCgpIHsKICAgIGNvbnN0IHRlcm0gPSBxLnRyaW0oKTsKICAgIGlmICghdGVybSkgcmV0dXJuOwogICAgc2V0TG9hZGluZyh0cnVlKTsKICAgIHRyeSB7CiAgICAgIGNvbnN0IHIgPSBhd2FpdCBmZXRjaChgL2FwaS9kaWN0aW9uYXJ5P3E9JHtlbmNvZGVVUklDb21wb25lbnQodGVybSl9YCk7CiAgICAgIGNvbnN0IGQgPSBhd2FpdCByLmpzb24oKTsKICAgICAgc2V0SGl0KGQud29yZCB8fCBudWxsKTsKICAgICAgc2V0Vmlld2VkKDUpOwogICAgfSBjYXRjaCB7CiAgICAgIHNldEhpdChudWxsKTsKICAgIH0gZmluYWxseSB7CiAgICAgIHNldExvYWRpbmcoZmFsc2UpOwogICAgfQogIH0KCiAgZnVuY3Rpb24gc3BlYWsodGV4dDogc3RyaW5nKSB7CiAgICBpZiAodHlwZW9mIHdpbmRvdyA9PT0gJ3VuZGVmaW5lZCcgfHwgIXdpbmRvdy5zcGVlY2hTeW50aGVzaXMpIHJldHVybjsKICAgIGNvbnN0IHUgPSBuZXcgU3BlZWNoU3ludGhlc2lzVXR0ZXJhbmNlKHRleHQpOwogICAgdS5sYW5nID0gJ2VuLVVTJzsKICAgIHdpbmRvdy5zcGVlY2hTeW50aGVzaXMuc3BlYWsodSk7CiAgfQoKICByZXR1cm4gKAogICAgPExheW91dD4KICAgICAgPGRpdiBjbGFzc05hbWU9InNwYWNlLXktNSI+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtc3RhcnQgZ2FwLTMiPgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9InctMTEgaC0xMSByb3VuZGVkLTJ4bCBmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciBzaHJpbmstMCIgc3R5bGU9e3sgYmFja2dyb3VuZENvbG9yOiBBQ0NFTlQubGlsYWMgKyAnMjAnIH19PgogICAgICAgICAgICA8U2VhcmNoIHNpemU9ezE5fSBzdHlsZT17eyBjb2xvcjogQUNDRU5ULmxpbGFjIH19IC8+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgIDxoMiBjbGFzc05hbWU9InRleHQtbGcgZm9udC1ib2xkIj57dGV4dCgn2K/bjNqp2LTZhtix24wg2YfZiNi02YXZhtivJywgJ1NtYXJ0IERpY3Rpb25hcnknKX08L2gyPgogICAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQteHMgdGV4dC14eCBtdC0xIiBzdHlsZT17eyBjb2xvcjogdGhlbWUuc3ViIH19PgogICAgICAgICAgICAgIHt0ZXh0KCfZh9ixINql2YTZhdmHINix2Kcg2KzYs9iq2KzZiNuMINqp2YbYr9uM2Iwg2YXYudmG24wg2KrZhNmB2LjYjCDYrNmF2YTZhyDZiCDYs9i32K0g2KjYpyDYp9mI2LHYp9mH2KfYsS4nLCAnU2VhcmNoIGFueSB3b3JkIGZvciBtZWFuaW5nLCBwcm9udW5jaWF0aW9uLCBleGFtcGxlcyBhbmQgbGV2ZWwuJyl9CiAgICAgICAgICAgIDwvcD4KICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2PgoKICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBnYXAtMi41Ij4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJyZWxhdGl2ZSBmbGV4LTEiPgogICAgICAgICAgICA8U2VhcmNoIHNpemU9ezE1fSBjbGFzc05hbWU9ImFic29sdXRlIHRvcC0xLzIgLXRyYW5zbGF0ZS15LTEvMiIgc3R5bGU9e3sgY29sb3I6IHRoZW1lLm1ldGEsIGluc2V0SW5saW5lU3RhcnQ6ICcxNnB4JyB9fSAvPgogICAgICAgICAgICA8aW5wdXQKICAgICAgICAgICAgICB2YWx1ZT17cX0KICAgICAgICAgICAgICBvbkNoYW5nZT17KGUpID0+IHNldFEoZS50YXJnZXQudmFsdWUpfQogICAgICAgICAgICAgIG9uS2V5RG93bj17KGUpID0+IHsgaWYgKGUua2V5ID09PSAnRW50ZXInKSBzZWFyY2goKTsgfX0KICAgICAgICAgICAgICBwbGFjZWhvbGRlcj17dGV4dCgn2KzYs9iq2KzZiNuMINqp2YTZhdmHK8KuwqbigJwnLCAnU2VhcmNoIGEgdm9jYWJ1bGFyeSB3b3JkwqfigKYnKX0KICAgICAgICAgICAgICBjbGFzc05hbWU9InctZnVsbCBweS0zIHRleHQtc20gcm91bmRlZC1mdWxsIGJvcmRlciBmb2N1czpvdXRsaW5lLW5vbmUiCiAgICAgICAgICAgICAgc3R5bGU9e3sgYmFja2dyb3VuZENvbG9yOiB0aGVtZS5jYXJkLCBib3JkZXJDb2xvcjogdGhlbWUuYm9yZGVyLCBjb2xvcjogdGhlbWUudGV4dCwgcGFkZGluZ0lubGluZUVuZDogJzE2cHgnLCBwYWRkaW5nSW5saW5lU3RhcnQ6ICc0MnB4JyB9fQogICAgICAgICAgICAvPgogICAgICAgICAgPC9kaXY+CiAgICAgICAgICA8YnV0dG9uCiAgICAgICAgICAgIG9uQ2xpY2s9e3NlYXJjaH0KICAgICAgICAgICAgZGlzYWJsZWQ9e2xvYWRpbmcgfHwgIXEudHJpbSgpfQogICAgICAgICAgICBjbGFzc05hbWU9InB4LTUgcHktMyByb3VuZGVkLWZ1bGwgZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTIgdGV4dC1zbSBmb250LXNlbWlib2xkIGRpc2FibGVkOm9wYWNpdHktNDAiCiAgICAgICAgICAgIHN0eWxlPXt7IGJhY2tncm91bmRDb2xvcjogQUNDRU5ULm9jZWFuLCBjb2xvcjogJyNmZmYnIH19CiAgICAgICAgICA+CiAgICAgICAgICAgIHtsb2FkaW5nID8gPExvYWRlcjIgc2l6ZT17MTV9IGNsYXNzTmFtZT0iYW5pbWF0ZS1zcGluIiAvPiA6IHRleHQoJ9is2LPYqtis2KjbjCcsICdTZWFyY2gnKX0KICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgIDwvZGl2PgoKICAgICAgICB7aGl0ICYmICgKICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJyb3VuZGVkLTJ4bCBib3JkZXIgcC01IG1kOnAtNiBhcmlhLWxpdmU9InBvbGl0ZSIgc3R5bGU9e3sgYmFja2dyb3VuZENvbG9yOiB0aGVtZS5jYXJkLCBib3JkZXJDb2xvcjogdGhlbWUuYm9yZGVyIH19PgogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1iZXR3ZWVuIGdhcC0zIGZsZXgtd3JhcCI+CiAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtY2VudGVyIGdhcC0zIj4KICAgICAgICAgICAgICAgIDxoMyBjbGFzc05hbWU9InRleHQtMnhsIGZvbnQtYm9sZCIgZGlyPSJsdHIiPntoaXQuZW5nbGlzaH08L2gzPgogICAgICAgICAgICAgICAgPGJ1dHRvbiBvbkNsaWNrPXsoKSA9PiBzcGVhayhoaXQuZW5nbGlzaCl9IGNsYXNzTmFtZT0idy05IGgtOSByb3VuZGVkLWZ1bGwgZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIiIHN0eWxlPXt7IGJhY2tncm91bmRDb2xvcjogQUNDRU5ULm9jZWFuICsgJzE4JyB9fT4KICAgICAgICAgICAgICAgICAgPFZvbHVtZTIgc2l6ZT17MTZ9IHN0eWxlPXt7IGNvbG9yOiBBQ0NFTlQub2NlYW4gfX0gLz4KICAgICAgICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0idGV4dC1bMTBweF0gcHgtMi41IHB5LTEgcm91bmRlZC1mdWxsIGZvbnQtc2VtaWJvbGQgYm9yZGVyIiBzdHlsZT17eyBiYWNrZ3JvdW5kQ29sb3I6IChMRVZFTF9DT0xPUlt7aGl0LmxldmVsXX0gPyBMRVZFTF9DT0xPUltoaXQubGV2ZWxdIDogQUNDRU5ULm9jZWFuKSArICcxNScsIGNvbG9yOiB0aGVtZS5zdWIsIGJvcmRlckNvbG9yOiB0aGVtZS5ib3JkZXIgfX0+e2hpdC5sZXZlbH08L3NwYW4+CiAgICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LVsyMnB4XSBmb250LWJvbGQgbXQtMiIgc3R5bGU9e3sgY29sb3I6IHRoZW1lLnRleHQgfX0+e2hpdC5wZXJzaWFufTwvcD4KICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LVsxMnB4XSBmb250LW1vbm8gbXQtMSIgZGlyPSJsdHIiIHN0eWxlPXt7IGNvbG9yOiBBQ0NFTlQub2NlYW4gfX0+e2hpdC5waG9uZXRpY308L3A+CgogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ibXQtNCBzcGFjZS15LTIuNSI+CiAgICAgICAgICAgICAgPHBIGNsYXNzTmFtZT0idGV4dC1bMTBweF0gZm9udC1zZW1pYm9sZCB1cHBlcmNhc2UgdHJhY2tpbmctd2lkZSByZXNldCIgc3R5bGU9e3sgY29sb3I6IHRoZW1lLm1ldGEgfX0+e3RleHQoJ9mF2K3Yp9mE2KfZhicsICdFeGFtcGxlJyl9PC9wPgogICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJwLTQgcm91bmRlZC14bCBib3JkZXIiIHN0eWxlPXt7IGJhY2tncm91bmRDb2xvcjogdGhlbWUucm93SG92ZXIsIGJvcmRlckNvbG9yOiB0aGVtZS5ib3JkZXIgfX0+CiAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtWzEzcHhdIGl0YWxpYyIgZGlyPSJsdHIiPuKAnHtoaXQuZXhhbXBsZUVufeKAnTwvcD4KICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC1bMTJweF0gbXQtMS41IiBzdHlsZT17eyBjb2xvcjogdGhlbWUuc3ViIH19PntoaXQuZXhhbXBsZUZhfTwvcD4KICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPC9kaXY+CgogICAgICAgICAgICB7aGl0LnJlbGF0ZWQgJiYgaGl0LnJlbGF0ZWQubGVuZ3RoID4gMCAmJiAoCiAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9Im10LTQiPgogICAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LVsxMHB4XSBmb250LXNlbWlib2xkIHVwcGVyY2FzZSB0cmFja2luZy13aWRlIG1iLTIiIHN0eWxlPXt7IGNvbG9yOiB0aGVtZS5tZXRhIH19Pnt0ZXh0KCfYrNmF2YTZh+KAjNmH2KfbjCDYqNmC24zYp9ixJywgJ1JlbGF0ZWQgd29yZHMnKX08L3A+CiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBmbGV4LXdyYXAgZ2FwLTIiPgogICAgICAgICAgICAgICAgICB7aGl0LnJlbGF0ZWQuc2xpY2UoMCwgNykubWFwKChydywgaSkgPT4gKAogICAgICAgICAgICAgICAgICAgIDxidXR0b24ga2V5PXtpfSBvbkNsaWNrPXsoKSA9PiB7IHNldFEocncpOyBzZXRIaXQobnVsbCk7IHNldFRpbWVvdXQoc2VhcmNoLCAwKTsgfX0KICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0idGV4dC1bMTFweF0gcHgtMyBweS0xLjUgcm91bmRlZC1mdWxsIGJvcmRlciBkaXI9Imx0ciBmb250LW1lZGl1bSIKICAgICAgICAgICAgICAgICAgICAgIHN0eWxlPXt7IGJhY2tncm91bmRDb2xvcjogdGhlbWUucm93SG92ZXIsIGJvcmRlckNvbG9yOiB0aGVtZS5ib3JkZXIsIGNvbG9yOiB0aGVtZS5zdWIgfX0+CiAgICAgICAgICAgICAgICAgICAgICB7cnd9CiAgICAgICAgICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICAgICAgICAgICkpfQogICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICl9CgogICAgICAgICAgICA8YnV0dG9uCiAgICAgICAgICAgICAgb25DbGljaz17KCkgPT4gcm91dGVyLnB1c2goYC9haT9xPSR7ZW5jb2RlVVJJQ29tcG9uZW50KGhpdC5lbmdsaXNoKX1gKX0KICAgICAgICAgICAgICBjbGFzc05hbWU9Im10LTUgcHgtNCBweS0yLjUgcm91bmRlZC1mdWxsIGZsZXggaXRlbXMtY2VudGVyIGdhcC0yIHRleHQtc20gZm9udC1zZW1pYm9sZCB0cmFuc2l0aW9uLWFsbCBob3ZlcjpzaGFkb3ctbWQiCiAgICAgICAgICAgICAgc3R5bGU9e3sgYmFja2dyb3VuZENvbG9yOiBBQ0NFTlQuY29yYWwsIGNvbG9yOiAnIzFBMUExQScgfX0KICAgICAgICAgICAgPgogICAgICAgICAgICAgIDxCb3Qgc2l6ZT17MTV9IC8+IHt0ZXh0KCfYqtmF2LHbjNmGINin2YYg2ql2YdWj2LHYpyDYqOinINin2YbZiNi0zYXZhtivJywgJ1ByYWN0aWNlIHRoaXMgd29yZCB3aXRoIEFJJyl9CiAgICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgICAgPC9kaXY+CiAgICAgICAgKX0KICAgICAgPC9kaXY+CiAgICA8L0xheW91dD4KICApOwp9Cg==
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
+import { Search, Volume2, Sparkles, Bot, Loader2, Book, Languages } from 'lucide-react';
+import Layout from '@/components/Layout';
+import { useUI } from '@/lib/ui-context';
+import { useAuth } from '@/lib/auth-context';
+import { ACCENT } from '@/styles/tokens';
+
+interface DictHit {
+  id: string;
+  english: string;
+  persian: string;
+  phonetic: string;
+  exampleEn: string;
+  exampleFa: string;
+  related: string[] | null;
+  level: string;
+  difficulty: number;
+}
+
+const LEVEL_COLOR: Record<string, string> = {
+  beginner: ACCENT.green,
+  elementary: ACCENT.teal,
+  intermediate: ACCENT.amber,
+};
+
+export default function DictionaryPage() {
+  const { lang, theme } = useUI();
+  const router = useRouter();
+  const { token } = useAuth();
+  const [q, setQ] = useState('');
+  const [hit, setHit] = useState<DictHit | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  const text = (fa: string, en: string) => (lang === 'fa' ? fa : en);
+
+  async function search() {
+    const term = q.trim();
+    if (!term) return;
+    setLoading(true);
+    try {
+      const r = await fetch(`/api/dictionary?q=${encodeURIComponent(term)}`);
+      const d = await r.json();
+      setHit(d.word || null);
+    } catch {
+      setHit(null);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  function speak(textVal: string) {
+    if (typeof window === 'undefined' || !window.speechSynthesis) return;
+    const u = new SpeechSynthesisUtterance(textVal);
+    u.lang = 'en-US';
+    window.speechSynthesis.speak(u);
+  }
+
+  return (
+    <Layout>
+      <div className="space-y-5">
+        <div className="flex items-start gap-3">
+          <div className="w-11 h-11 rounded-2xl flex items-center justify-center shrink-0" style={{ backgroundColor: ACCENT.lilac + '20' }}>
+            <Search size={19} style={{ color: ACCENT.lilac }} />
+          </div>
+          <div>
+            <h2 className="text-lg font-bold">{text('دیکشنری هوشمند', 'Smart Dictionary')}</h2>
+            <p className="text-xs mt-1" style={{ color: theme.sub }}>
+              {text('هر کلمه را جستجو کن تا معنی، تلفظ، مثال و سطح آن را ببینی.', 'Search any word for meaning, pronunciation, examples and level.')}
+            </p>
+          </div>
+        </div>
+
+        <div className="flex gap-2.5">
+          <div className="relative flex-1">
+            <Search size={15} className="absolute top-1/2 -translate-y-1/2" style={{ color: theme.meta, insetInlineStart: '16px' }} />
+            <input
+              value={q}
+              onChange={(e) => setQ(e.target.value)}
+              onKeyDown={(e) => { if (e.key === 'Enter') search(); }}
+              placeholder={text('جستجوی کلمه…', 'Search a word…')}
+              className="w-full py-3 text-sm rounded-full border focus:outline-none"
+              style={{ backgroundColor: theme.card, borderColor: theme.border, color: theme.text, paddingInlineEnd: '16px', paddingInlineStart: '42px' }}
+            />
+          </div>
+          <button
+            onClick={search}
+            disabled={loading || !q.trim()}
+            className="px-5 py-3 rounded-full flex items-center gap-2 text-sm font-semibold disabled:opacity-40"
+            style={{ backgroundColor: ACCENT.ocean, color: '#fff' }}
+          >
+            {loading ? <Loader2 size={15} className="animate-spin" /> : text('جستجو', 'Search')}
+          </button>
+        </div>
+
+        {hit && (
+          <div className="rounded-2xl border p-5 md:p-6 aria-live="polite"" style={{ backgroundColor: theme.card, borderColor: theme.border }}>
+            <div className="flex items-center justify-between gap-3 flex-wrap">
+              <div className="flex items-center gap-3">
+                <h3 className="text-2xl font-bold" dir="ltr">{hit.english}</h3>
+                <button onClick={() => speak(hit.english)} className="w-9 h-9 rounded-full flex items-center justify-center" style={{ backgroundColor: ACCENT.ocean + '18' }}>
+                  <Volume2 size={16} style={{ color: ACCENT.ocean }} />
+                </button>
+              </div>
+              <span className="text-[10px] px-2.5 py-1 rounded-full font-semibold border" style={{ backgroundColor: (LEVEL_COLOR[hit.level] ? LEVEL_COLOR[hit.level] : ACCENT.ocean) + '15', color: theme.sub, borderColor: theme.border }}>{hit.level}</span>
+            </div>
+
+            <p className="text-[22px] font-bold mt-2" style={{ color: theme.text }}>{hit.persian}</p>
+            <p className="text-[12px] font-mono mt-1" dir="ltr" style={{ color: ACCENT.ocean }}>{hit.phonetic}</p>
+
+            <div className="mt-4 space-y-2.5">
+              <p className="text-[10px] font-semibold uppercase tracking-wide" style={{ color: theme.meta }}>{text('مثال', 'Example')}</p>
+              <div className="p-4 rounded-xl border" style={{ backgroundColor: theme.rowHover, borderColor: theme.border }}>
+                <p className="text-[13px] italic" dir="ltr">“{hit.exampleEn}”</p>
+                <p className="text-[12px] mt-1.5" style={{ color: theme.sub }}>{hit.exampleFa}</p>
+              </div>
+            </div>
+
+            {hit.related && hit.related.length > 0 && (
+              <div className="mt-4">
+                <p className="text-[10px] font-semibold uppercase tracking-wide mb-2" style={{ color: theme.meta }}>{text('کلمات مرتبط', 'Related words')}</p>
+                <div className="flex flex-wrap gap-2">
+                  {hit.related.slice(0, 7).map((rw, i) => (
+                    <button key={i} onClick={() => { setQ(rw); setHit(null); setTimeout(search, 0); }}
+                      className="text-[11px] px-3 py-1.5 rounded-full border dir="ltr" font-medium"
+                      style={{ backgroundColor: theme.rowHover, borderColor: theme.border, color: theme.sub }}>
+                      {rw}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <button
+              onClick={() => router.push(`/ai?q=${encodeURIComponent(hit.english)}`)}
+              className="mt-5 px-4 py-2.5 rounded-full flex items-center gap-2 text-sm font-semibold transition-all hover:shadow-md"
+              style={{ backgroundColor: ACCENT.coral, color: '#1A1A1A' }}
+            >
+              <Bot size={15} /> {text('تمرین این کلمه با هوش مصنوعی', 'Practice this word with AI')}
+            </button>
+          </div>
+        )}
+      </div>
+    </Layout>
+  );
+}
