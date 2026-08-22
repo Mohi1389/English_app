@@ -2,25 +2,26 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { prisma } from '@/lib/prisma';
 import { bearer, verifyToken } from '@/lib/auth';
 import { aiMessageSchema } from '@/lib/validators';
+import { toJson, fromJson } from '@/lib/json';
 
 /**
  * Persian-first AI tutor system prompt.
  *
  * Rules baked in:
- *  - Always reply in Persian, kind / patient / encouraging
- *  - Never force the user to speak English
- *  - Correct English mistakes and explain WHY in Persian
- *  - On translation requests: English equivalent + example + Persian note
+ *   - Always reply in Persian, kind / patient / encouraging
+ *   - Never force the user to speak English
+ *   - Correct English mistakes and explain WHY in Persian
+ *   - On translation requests: English equivalent + example + Persian note
  */
-export const SYSTEM_PROMPT = `تو دستیار مهربان، صبور و تشویق‌کننده آموزش زبان انگلیسی در پلتفرم Learn with Mohanna هستی.
+export const SYSTEM_PROMPT = `تو یک دستیار مهربان و صبور و تشویق‌کننده هستی و به‌کمک فارسی‌زبان‌ها در یادگیری زبان انگلیسی کمک می‌کنی. نام تو پلتفرم Learn with Mohanna هستی.
 
 قوانین تو:
-1. همیشه به زبان فارسی و دوستانه پاسخ بده.
-2. کاربر را هرگز مجبور به انگلیسی صحبت کردن نکن.
-3. اگر جمله انگلیسی کاربر غلط داشت، اول تشویق کن، بعد شکل درست را بنویس و دلیل اشتباه را فارسی توضیح بده.
-4. اگر درخواست ترجمه بود، معادل انگلیسی + یک مثال در جمله + توضیح فارسی بده.
-5. می‌توانی گرامر توضیح بدهی، لغت آموزش بدهی، برنامه یادگیری پیشنهاد کنی و تمرین مکالمه بسازی.
-6. لحن تو مانند یک همراه یادگیری است — نه یک معلم سختگیر.`;
+1. همیشه به زبان فارسی و روان پاسخ بده.
+2. هرگز کاربر را مجبور نکن که انگلیسی صحبت کند و برنامه را انگلیسی بگوید.
+3. اگر کاربر جمله انگلیسی اشتباه نوشت، جمله صحیح را همراه با دلیل فارسی توضیح بده و با مهربانی آموزش بده.
+4. اگر کاربر درخواست ترجمه داد، معادل انگلیسی + مثال + توضیح فارسی بده.
+5. اگر کاربر سوال گرامری داشت، جمله را آموزش بده و با مهربانی پاسخ بده.
+6. وقتی کاربر درخواست مهارت یا برنامه یادگیری دارد، برنامه مطالعه و تمرین فارسی پیشنهاد بده.`;
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -38,7 +39,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   if (!process.env.OPENAI_API_KEY) {
     return res.status(503).json({
-      error: 'دستیار هوشمند هنوز وصل نشده است. لطفاً OPENAI_API_KEY را در .env تنطیم کنید.',
+      error: 'دستیار هوش مصنوعی هنوز فعال نیست. لطفاً OPENAI_API_KEY را در .env تنظیم کنید.',
     });
   }
 
@@ -48,8 +49,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const conv = await prisma.aIConversation.findFirst({
       where: { id: conversationId, userId: payload.userId },
     });
-    if (conv && Array.isArray(conv.messages)) {
-      history = conv.messages as { role: string; content: string }[];
+    if (conv) {
+      const parsedHistory = fromJson<{ role: string; content: string }[]>(conv.messages);
+      if (Array.isArray(parsedHistory)) history = parsedHistory;
     }
   }
 
@@ -71,7 +73,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   });
 
   if (!aiRes.ok) {
-    return res.status(502).json({ error: 'پاسخ دستیار هوشمند دریافت نشد، دوباره تلاش کنید.' });
+    return res.status(502).json({ error: 'پاسخ دستیار هوش مصنوعی برنگشت. لطفاً دوباره تلاش کن.' });
   }
 
   const json = await aiRes.json();
@@ -83,17 +85,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     { role: 'assistant', content: reply },
   ];
 
-  // Persist conversation history
+  // Persist conversation history (messages stored as a JSON string)
   const conv = conversationId
     ? await prisma.aIConversation.update({
         where: { id: conversationId },
-        data: { messages: nextMessages },
+        data: { messages: toJson(nextMessages) },
       })
     : await prisma.aIConversation.create({
         data: {
           userId: payload.userId,
           title: message.slice(0, 60),
-          messages: nextMessages,
+          messages: toJson(nextMessages),
         },
       });
 
