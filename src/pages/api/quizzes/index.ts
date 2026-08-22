@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { prisma } from '@/lib/prisma';
 import { bearer, verifyToken } from '@/lib/auth';
 import { quizResultSchema } from '@/lib/validators';
+import { toJson, fromJson } from '@/lib/json';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   // Public: list quizzes
@@ -11,7 +12,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       where: typeof type === 'string' && type !== 'all' ? { type } : {},
       orderBy: { createdAt: 'desc' },
     });
-    return res.status(200).json({ quizzes });
+    // Parse question JSON strings back into arrays for the client
+    const parsed = quizzes.map((q) => ({
+      ...q,
+      questions: fromJson(q.questions) ?? [],
+    }));
+    return res.status(200).json({ quizzes: parsed });
   }
 
   // Protected: submit a quiz result
@@ -31,8 +37,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         quizId,
         score,
         total,
-        strengths: strengths ?? [],
-        weaknesses: weaknesses ?? [],
+        strengths: toJson(strengths ?? []),
+        weaknesses: toJson(weaknesses ?? []),
       },
     });
 
