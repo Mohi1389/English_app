@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { prisma } from '@/lib/prisma';
+import { fromJson } from '@/lib/json';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'GET') {
@@ -24,5 +25,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     orderBy: { createdAt: 'desc' },
   });
 
-  return res.status(200).json({ words, count: words.length });
+  // Parse `related` JSON string back into an array
+  const parsed = words.map((w) => ({ ...w, related: fromJson<string[]>(w.related) ?? [] }));
+
+  return res.status(200).json({ words: parsed, count: words.length });
 }
