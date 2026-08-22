@@ -5,7 +5,7 @@ export type Lang = 'fa' | 'en';
 export const STRINGS = {
   fa: {
     dir: 'rtl',
-    tagline: 'یادگیری هوشمند انگلیسی برای فارسی‌زبان‌ها',
+    tagline: 'زبان انگلیسی را هوشمند، سریع و با لذت یاد بگیر',
     logout: 'خروج',
     nav: {
       home: 'خانه',
@@ -14,7 +14,7 @@ export const STRINGS = {
       dictionary: 'دیکشنری',
       ai: 'دستیار هوشمند',
       quizzes: 'آزمون‌ها',
-      community: 'انجمن',
+      community: 'محفل',
       movies: 'فیلم و انیمیشن',
       profile: 'پروفایل',
       settings: 'تنظیمات',
@@ -22,14 +22,14 @@ export const STRINGS = {
     goals: ['مکالمه', 'لغات', 'زبان مدرسه', 'سفر', 'انگلیسی عمومی'],
     hero: {
       title: 'Learn English with confidence',
-      sub: 'اینجا یک محیط دوستانه برای پیشرفت زبان توست. با آموزش قدم‌به‌قدم، تمرین با هوش مصنوعی فارسی‌زبان، آزمون‌های هدفمند و یک جامعه امن، از سطح مبتدی تا متوسط رشد می‌کنی.',
+      sub: 'یک سفر هیجان‌انگیز زبان انگلیسی؛ با دستیار فارسی‌زبان مهربان، لغات تصویری، آزمون‌های چالشی و یک محفلِ پرانرژی از دوستان که کنارت می‌مانند.',
       cta1: 'شروع یادگیری',
       cta2: 'تعیین سطح زبان',
     },
     auth: {
       loginTitle: 'ورود به حساب',
       signupTitle: 'ساخت حساب جدید',
-      gated: 'برای ذخیره پیشرفت، تاریخچه دستیار هوشمند، نتایج آزمون و انجمن به حساب کاربری نیاز داری.',
+      gated: 'برای ذخیره پیشرفت، تاریخچه دستیار هوشمند، نتایج آزمون و محفل به حساب نیاز داری.',
       login: 'ورود',
       signup: 'ثبت‌نام',
       createAccount: 'ساخت حساب',
@@ -55,8 +55,8 @@ export const STRINGS = {
     },
     ai: {
       title: 'دستیار هوشمند',
-      desc: 'فارسی بپرس، فارسی جواب بگیر. ترجمه، گرامر، اصلاح اشتباه و برنامه یادگیری.',
-      placeholder: 'سوالت را فارسی بنویس…',
+      desc: 'بپرس، جواب بگیر، گرامر یاد بگیر و مسیر مطالعه‌ات را بساز — همه به زبان فارسی و بدون استرس.',
+      placeholder: 'هر سوالی داری اینجا بنویس…',
       thinking: 'دارم فکر می‌کنم…',
       note: 'دستیار هوشمند تو را مجبور به انگلیسی صحبت کردن نمی‌کند.',
     },
@@ -64,7 +64,7 @@ export const STRINGS = {
 
   en: {
     dir: 'ltr',
-    tagline: 'Smart English learning for Persian speakers',
+    tagline: 'Learn English the smart, fast and fun way',
     logout: 'Log out',
     nav: {
       home: 'Home',
@@ -73,7 +73,7 @@ export const STRINGS = {
       dictionary: 'Dictionary',
       ai: 'AI Tutor',
       quizzes: 'Quizzes',
-      community: 'Community',
+      community: 'The Lounge',
       movies: 'Movies',
       profile: 'Profile',
       settings: 'Settings',
@@ -81,14 +81,14 @@ export const STRINGS = {
     goals: ['Conversation', 'Vocabulary', 'School English', 'Travel', 'General English'],
     hero: {
       title: 'Learn English with confidence',
-      sub: 'A friendly place to grow your English. Step-by-step lessons, a Persian-speaking AI tutor, focused quizzes and a safe community — from beginner to intermediate.',
+      sub: 'An exciting English journey — a kind Persian-speaking tutor, visual words, fun quizzes and an energetic lounge of friends by your side.',
       cta1: 'Start learning',
       cta2: 'Take placement test',
     },
     auth: {
       loginTitle: 'Log in',
       signupTitle: 'Create account',
-      gated: 'An account is needed to save progress, AI history, quiz results and community access.',
+      gated: 'An account is needed to save progress, AI history, quiz results and lounge access.',
       login: 'Log in',
       signup: 'Sign up',
       createAccount: 'Create account',
@@ -114,8 +114,8 @@ export const STRINGS = {
     },
     ai: {
       title: 'AI Tutor',
-      desc: 'Ask in Persian or English. Translation, grammar, corrections and study plans.',
-      placeholder: 'Type your question…',
+      desc: 'Ask, get answers, learn grammar and build your study plan — all stress-free.',
+      placeholder: 'Type your question here…',
       thinking: 'Thinking…',
       note: 'The AI tutor never forces you to speak English.',
     },
