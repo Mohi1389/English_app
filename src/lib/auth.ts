@@ -1,5 +1,5 @@
 import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
+import jwt, { type SignOptions } from 'jsonwebtoken';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'dev-only-change-me';
 const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || '7d';
@@ -18,7 +18,8 @@ export async function verifyPassword(plain: string, hash: string): Promise<boole
 }
 
 export function signToken(payload: TokenPayload): string {
-  return jwt.sign(payload, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN });
+  const options: SignOptions = { expiresIn: JWT_EXPIRES_IN as SignOptions['expiresIn'] };
+  return jwt.sign(payload, JWT_SECRET, options);
 }
 
 export function verifyToken(token: string): TokenPayload | null {
