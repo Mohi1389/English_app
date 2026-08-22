@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
-import { Search, Volume2, Sparkles, Bot, Loader2, Book, Languages } from 'lucide-react';
+import { Search, Volume2, Sparkles, Bot, Loader2 } from 'lucide-react';
 import Layout from '@/components/Layout';
 import { useUI } from '@/lib/ui-context';
-import { useAuth } from '@/lib/auth-context';
 import { ACCENT } from '@/styles/tokens';
 
 interface DictHit {
@@ -27,7 +26,6 @@ const LEVEL_COLOR: Record<string, string> = {
 export default function DictionaryPage() {
   const { lang, theme } = useUI();
   const router = useRouter();
-  const { token } = useAuth();
   const [q, setQ] = useState('');
   const [hit, setHit] = useState<DictHit | null>(null);
   const [loading, setLoading] = useState(false);
@@ -94,7 +92,7 @@ export default function DictionaryPage() {
         </div>
 
         {hit && (
-          <div className="rounded-2xl border p-5 md:p-6 aria-live="polite"" style={{ backgroundColor: theme.card, borderColor: theme.border }}>
+          <div className="rounded-2xl border p-5 md:p-6" aria-live="polite" style={{ backgroundColor: theme.card, borderColor: theme.border }}>
             <div className="flex items-center justify-between gap-3 flex-wrap">
               <div className="flex items-center gap-3">
                 <h3 className="text-2xl font-bold" dir="ltr">{hit.english}</h3>
@@ -122,7 +120,7 @@ export default function DictionaryPage() {
                 <div className="flex flex-wrap gap-2">
                   {hit.related.slice(0, 7).map((rw, i) => (
                     <button key={i} onClick={() => { setQ(rw); setHit(null); setTimeout(search, 0); }}
-                      className="text-[11px] px-3 py-1.5 rounded-full border dir="ltr" font-medium"
+                      className="text-[11px] px-3 py-1.5 rounded-full border font-medium" dir="ltr"
                       style={{ backgroundColor: theme.rowHover, borderColor: theme.border, color: theme.sub }}>
                       {rw}
                     </button>
