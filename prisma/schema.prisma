@@ -20,7 +20,7 @@ model User {
   xp            Int      @default(0)
   streakDays    Int      @default(0)
   lastActiveDate DateTime?
-  settings      Json?
+  settings      String? // JSON string
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 
@@ -41,7 +41,7 @@ model Word {
   exampleFa   String
   level       String // 'beginner' | 'elementary' | 'intermediate'
   difficulty  Int      @default(1)
-  related     Json?
+  related     String? // JSON array
   createdAt   DateTime @default(now())
 
   savedBy     SavedWord[]
@@ -67,7 +67,7 @@ model Quiz {
   title     String
   type      String // 'vocabulary' | 'grammar' | 'placement' | 'mixed'
   level     String
-  questions Json
+  questions String // JSON array
   createdAt DateTime    @default(now())
 
   results   QuizResult[]
@@ -81,8 +81,8 @@ model QuizResult {
   quizId    String?
   score     Float
   total     Int
-  strengths Json?
-  weaknesses Json?
+  strengths String? // JSON array
+  weaknesses String? // JSON array
   createdAt DateTime @default(now())
 
   user User  @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -95,7 +95,7 @@ model AIConversation {
   id        String   @id @default(cuid())
   userId    String
   title     String?
-  messages  Json
+  messages  String // JSON array
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
