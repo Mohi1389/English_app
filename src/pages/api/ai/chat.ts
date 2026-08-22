@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { prisma } from '@/lib/prisma';
 import { bearer, verifyToken } from '@/lib/auth';
 import { aiMessageSchema } from '@/lib/validators';
-import { toJson, fromJson } from '@/lib/json';
+import { fromJson } from '@/lib/json';
 
 /**
  * Persian-first AI tutor system prompt.
@@ -85,19 +85,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     { role: 'assistant', content: reply },
   ];
 
-  const serializedMessages = JSON.stringify(nextMessages);
+  const messagesJson = JSON.stringify(nextMessages);
 
   // Persist conversation history (messages stored as a JSON string)
   const conv = conversationId
     ? await prisma.aIConversation.update({
         where: { id: conversationId },
-        data: { messages: serializedMessages },
+        data: { messages: messagesJson },
       })
     : await prisma.aIConversation.create({
         data: {
           userId: payload.userId,
           title: message.slice(0, 60),
-          messages: serializedMessages,
+          messages: messagesJson,
         },
       });
 
