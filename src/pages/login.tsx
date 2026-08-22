@@ -9,6 +9,8 @@ import { t } from '@/lib/i18n';
 import { ACCENT } from '@/styles/tokens';
 import { AGE_RANGES, LEVELS, GOALS } from '@/lib/validators';
 
+const LEVEL_FA: Record<string, string> = { beginner: 'مبتدی', elementary: 'مقدماتی', intermediate: 'متوسط' };
+
 export default function LoginPage() {
   const router = useRouter();
   const { lang, theme } = useUI();
@@ -48,7 +50,6 @@ export default function LoginPage() {
             </div>
           </div>
 
-          {/* Mode switch */}
           <div className="flex gap-1 rounded-full p-1 mb-5" style={{ backgroundColor: theme.navBg }}>
             {([
               { id: 'login' as const, label: L.auth.login, icon: LogIn },
@@ -125,7 +126,7 @@ export default function LoginPage() {
                     value={form.level}
                     onChange={(e) => set('level', e.target.value)}
                   >
-                    {LEVELS.map((x) => <option key={x} value={x}>{x}</option>)}
+                    {LEVELS.map((x) => <option key={x} value={x}>{lang === 'fa' ? LEVEL_FA[x] : x}</option>)}
                   </select>
                 </Field>
 
@@ -154,7 +155,7 @@ export default function LoginPage() {
               {mode === 'login' ? L.auth.login : L.auth.createAccount}
             </button>
 
-            <button className="w-full text-[11px] pt-1" style={{ color: theme.meta }}>{L.auth.forgot}</button>
+            <button onClick={() => router.push('/recover')} className="w-full text-sm pt-2 font-semibold hover:underline transition-all" style={{ color: ACCENT.ocean }}>{L.auth.forgot}</button>
           </div>
         </div>
       </div>
