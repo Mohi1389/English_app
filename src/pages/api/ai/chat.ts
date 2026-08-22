@@ -85,17 +85,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     { role: 'assistant', content: reply },
   ];
 
+  const serializedMessages = JSON.stringify(nextMessages);
+
   // Persist conversation history (messages stored as a JSON string)
   const conv = conversationId
     ? await prisma.aIConversation.update({
         where: { id: conversationId },
-        data: { messages: toJson(nextMessages) },
+        data: { messages: serializedMessages },
       })
     : await prisma.aIConversation.create({
         data: {
           userId: payload.userId,
           title: message.slice(0, 60),
-          messages: toJson(nextMessages),
+          messages: serializedMessages,
         },
       });
 
